@@ -1,8 +1,8 @@
 # find Python, make sure we use the same version for interpreter and libraries
-find_package(PythonInterp)
+find_package(PythonInterp 2.7 REQUIRED)
 message(STATUS "Python version from interpreter is ${PYTHON_VERSION_STRING}")
 set(Python_ADDITIONAL_VERSIONS ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR})
-find_package(PythonLibs)
+find_package(PythonLibs 2.7 REQUIRED)
 
 # make sure we have the right modules
 if (PYTHONLIBS_FOUND AND PYTHONINTERP_FOUND AND Qt5Widgets_FOUND AND Qt5OpenGL_FOUND)
